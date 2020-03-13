@@ -10,7 +10,8 @@ class GCPBaseFacade:
         return self._build_arbitrary_client(self._client_name, self._client_version)
 
     def _build_arbitrary_client(self, client_name, client_version):
-        return discovery.build(client_name, client_version, cache_discovery=False, cache=MemoryCache())
+        return discovery.build(client_name, client_version, cache_discovery=False)
+        # return discovery.build(client_name, client_version, cache_discovery=False, cache=MemoryCache())
 
     # Since the HTTP library used by the Google API Client library is not 
     # thread-safe, we need to create a new client for each request.
